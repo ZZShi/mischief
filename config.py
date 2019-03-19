@@ -57,11 +57,11 @@ COMMAND = {
 # ----------------------log配置----------------------
 # 邮箱信息
 MAILHOST = ('smtp.163.com', 25)
-FROMADDR = '15596626029@163.com'
-TOADDRS = ['858608813@qq.com']
+FROMADDR = '********@163.com'
+TOADDRS = ['*********@qq.com']
 SUBJECT = 'Error Record'
 # 凭证，用户名和SMTP协议密码
-CREDENTIALS = ('15596626029@163.com', 'szz233214')
+CREDENTIALS = ('*******@163.com', '********')
 
 logger = logging.getLogger('MyLogger')
 logger.setLevel(logging.DEBUG)
