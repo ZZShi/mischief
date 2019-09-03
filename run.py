@@ -8,8 +8,8 @@
 """
 import time
 
-from config import *
-from scheduler import Scheduler
+from src.config import *
+from src.scheduler import Scheduler
 
 
 from threading import Thread
@@ -20,7 +20,6 @@ def receive_msg(q):
     """
     用来接收master的消息，并将收到的消息存到消息队列中
     """
-
     @BOT.register(MASTER, except_self=False)
     def put_msg_to_queue(msg):
         msg = str(msg)
@@ -50,7 +49,7 @@ def process_msg(q):
 if __name__ == '__main__':
     msg_q = Queue()
     p1 = Process(target=receive_msg, args=(msg_q, ))
-    p2 = Process(target=process_msg, args=(msg_q,))
+    p2 = Process(target=process_msg, args=(msg_q, ))
     p1.start()
     p2.start()
     # ---p1、p2都是死循环，若是还有其它进程可以继续添加在下面
